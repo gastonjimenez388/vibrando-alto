@@ -10,8 +10,8 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    /* Asegúrate de que fondo.png esté en la misma carpeta que este CSS */
-    background-image: url('fondo.png'); 
+    /* Usamos la ruta que ya sabemos que funciona */
+    background-image: url('../../fondo.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body {
 
 header {
     background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px); /* Efecto cristal para el header */
+    backdrop-filter: blur(8px);
     padding: 1rem 0;
     border-bottom: 2px solid rgba(221, 221, 221, 0.5);
 }
@@ -51,19 +51,19 @@ nav ul li a {
 }
 
 section {
-    max-width: 900px; /* Ancho ajustado para no tapar a las personas */
+    max-width: 900px;
     margin: 1.5rem auto;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.7); /* Mayor transparencia */
-    backdrop-filter: blur(10px); /* Desenfoque para integrar con el fondo */
-    border-radius: 15px; /* Bordes redondeados modernos */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 footer {
     text-align: center;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.6); /* Fondo más oscuro y elegante */
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
     margin-top: 2rem;
 }
