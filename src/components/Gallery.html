@@ -1,0 +1,48 @@
+<!-- Path: C:\Georgina\GitHub\vibrando-alto\src\components\Gallery.html -->
+
+<section id="galeria">
+    <div class="gallery-container">
+        <h2>Galería de Comunidad</h2>
+        <div class="gallery-actions">
+            <button class="upload-btn">Subir Foto</button>
+            <button class="download-btn">Descargar Galería</button>
+        </div>
+        <div class="gallery-grid">
+            <!-- Placeholder para imágenes futuras -->
+            <div class="gallery-item">Foto 1</div>
+            <div class="gallery-item">Foto 2</div>
+            <div class="gallery-item">Foto 3</div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .gallery-actions {
+        margin: 1rem 0;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        margin-top: 2rem;
+    }
+    .gallery-item {
+        background: #ddd;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+    .upload-btn, .download-btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .upload-btn { background: #4a90e2; color: white; }
+    .download-btn { background: #50c878; color: white; }
+</style>
