@@ -1,34 +1,94 @@
-/* Ajuste de contenedor principal para permitir el desplazamiento */
-main {
+:root {
+    --font-primary: Arial, sans-serif;
+    --color-surface-header: rgba(255, 255, 255, 0.9);
+    --color-surface-section: rgba(255, 255, 255, 0.95);
+    --color-surface-footer: rgba(0, 0, 0, 0.7);
+    --color-text-primary: #333;
+    --color-text-inverse: #ffffff;
+    --spacing-base: 1rem;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
     padding: 0;
-    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-image: url('../../fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000;
+}
+
+/* Header */
+header {
+    background: var(--color-surface-header);
+    padding: var(--spacing-base);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-base);
+}
+
+header a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: bold;
+}
+
+/* Main estructurado para anclar el contenido abajo */
+main {
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Empuja el contenido hacia abajo */
+    justify-content: flex-end;
     padding-bottom: 2rem;
 }
 
-/* Reducción y posicionamiento de las tarjetas */
 section {
-    max-width: 400px; /* Reducimos el ancho para que ocupen menos espacio */
-    margin: 0.5rem auto; /* Reducimos márgenes */
-    padding: 10rem; /* Padding más compacto */
-    background: rgba(255, 255, 255, 0.9); /* Ligeramente más transparente */
+    max-width: 450px;
+    margin: 0.5rem auto;
+    /* CORREGIDO: padding de 1rem para que la tarjeta sea compacta */
+    padding: 1rem; 
+    background: var(--color-surface-section);
     border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    
-    /* Asegura que el texto no sea masivo */
-    font-size: 0.9rem;
+    text-align: center;
 }
 
 section h2 {
-    font-size: 1.2rem; /* Títulos más pequeños para no tapar la imagen */
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
 
-/* Ajuste del Footer para que no compita con el contenido */
 footer {
-    background: rgba(0, 0, 0, 0.6); /* Más transparente */
+    text-align: center;
     padding: 1rem;
+    background: var(--color-surface-footer);
+    color: var(--color-text-inverse);
     font-size: 0.8rem;
 }
