@@ -22,8 +22,8 @@ body {
     min-height: 100vh;
     background-color: var(--color-background-fallback);
     
-    /* Path relative to the current stylesheet location. */
-    background-image: url('fondo.png'); 
+    /* Corrected path relative to src/styles/main.css to reach the root */
+    background-image: url('../../fondo.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -36,25 +36,41 @@ header {
     padding: var(--spacing-base) 0;
     position: sticky;
     top: 0;
-    
-    /* Ensures the header remains structurally above other overlapping layers */
-    z-index: 1000; 
-    
-    /* Adds a blur effect to the background behind the header for better text readability */
-    backdrop-filter: blur(8px); 
+    z-index: 1000;
+    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Secciones más pequeñas */
+header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-base);
+}
+
+header a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Sections */
 section {
     max-width: var(--max-width-section);
     margin: calc(var(--spacing-base) * 1.8) auto;
     padding: calc(var(--spacing-base) * 1.6);
     background: var(--color-surface-section);
     border-radius: var(--border-radius);
-    
-    /* subtle shadow to decouple the surface layer visually from the background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
