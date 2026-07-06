@@ -1,5 +1,4 @@
 :root {
-    /* Design System */
     --font-primary: Arial, sans-serif;
     --color-surface-header: rgba(255, 255, 255, 0.9);
     --color-surface-section: rgba(255, 255, 255, 0.95);
@@ -24,17 +23,15 @@ html, body {
 
 body {
     font-family: var(--font-primary);
-    /* Fondo: Subimos dos niveles desde src/styles hasta la raíz */
-    background-image: url('../../fondo.png');
+    /* Intentamos ruta absoluta desde la raíz del sitio */
+    background-image: url('/vibrando-alto/fondo.png');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* Evita que colores de fondo secundarios oculten la imagen */
-    background-color: #000; 
+    background-color: #000;
 }
 
-/* Header */
 header {
     background: var(--color-surface-header);
     padding: var(--spacing-base);
@@ -65,7 +62,6 @@ header a {
     font-weight: bold;
 }
 
-/* Main & Sections */
 main {
     padding: var(--spacing-base);
     min-height: 80vh;
@@ -80,7 +76,6 @@ section {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
