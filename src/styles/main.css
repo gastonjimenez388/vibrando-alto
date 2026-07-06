@@ -62,10 +62,10 @@ header a {
 
 /* Main estructurado para anclar el contenido abajo */
 main {
-    min-height: 90vh;
+    min-height: calc(100vh - 120px); /* 100vh es toda la pantalla, restamos header y footer */
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Ahora sí tiene espacio para empujar hacia abajo */
     padding-bottom: 2rem;
 }
 
