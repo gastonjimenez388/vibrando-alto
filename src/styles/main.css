@@ -1,3 +1,16 @@
+:root {
+    /* Design System Variables */
+    --font-primary: Arial, sans-serif;
+    --color-background-fallback: #1a1a1a;
+    --color-surface-header: rgba(255, 255, 255, 0.9);
+    --color-surface-section: rgba(255, 255, 255, 0.85);
+    --color-surface-footer: rgba(0, 0, 0, 0.8);
+    --color-text-inverse: #ffffff;
+    --spacing-base: 1rem;
+    --border-radius: 12px;
+    --max-width-section: 680px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +18,12 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-primary);
     min-height: 100vh;
+    background-color: var(--color-background-fallback);
     
-    /* Fondo simple y directo */
-    background-image: url('/fondo.png');
+    /* Path relative to the current stylesheet location. */
+    background-image: url('fondo.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -18,25 +32,35 @@ body {
 
 /* Header */
 header {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 1rem 0;
+    background: var(--color-surface-header);
+    padding: var(--spacing-base) 0;
     position: sticky;
     top: 0;
+    
+    /* Ensures the header remains structurally above other overlapping layers */
+    z-index: 1000; 
+    
+    /* Adds a blur effect to the background behind the header for better text readability */
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
 }
 
 /* Secciones más pequeñas */
 section {
-    max-width: 680px;
-    margin: 1.8rem auto;
-    padding: 1.6rem;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
+    max-width: var(--max-width-section);
+    margin: calc(var(--spacing-base) * 1.8) auto;
+    padding: calc(var(--spacing-base) * 1.6);
+    background: var(--color-surface-section);
+    border-radius: var(--border-radius);
+    
+    /* subtle shadow to decouple the surface layer visually from the background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+    padding: calc(var(--spacing-base) * 1.5);
+    background: var(--color-surface-footer);
+    color: var(--color-text-inverse);
 }
