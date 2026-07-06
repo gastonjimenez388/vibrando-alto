@@ -10,9 +10,9 @@ main {
 
 /* Reducción y posicionamiento de las tarjetas */
 section {
-    max-width: 500px; /* Reducimos el ancho para que ocupen menos espacio */
+    max-width: 400px; /* Reducimos el ancho para que ocupen menos espacio */
     margin: 0.5rem auto; /* Reducimos márgenes */
-    padding: 1rem; /* Padding más compacto */
+    padding: 10rem; /* Padding más compacto */
     background: rgba(255, 255, 255, 0.9); /* Ligeramente más transparente */
     border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
