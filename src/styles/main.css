@@ -1,84 +1,34 @@
-:root {
-    --font-primary: Arial, sans-serif;
-    --color-surface-header: rgba(255, 255, 255, 0.9);
-    --color-surface-section: rgba(255, 255, 255, 0.95);
-    --color-surface-footer: rgba(0, 0, 0, 0.9);
-    --color-text-primary: #333;
-    --color-text-inverse: #ffffff;
-    --spacing-base: 1rem;
-    --border-radius: 12px;
-    --max-width-section: 680px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    font-family: var(--font-primary);
-    /* Intentamos ruta absoluta desde la raíz del sitio */
-    background-image: url('/vibrando-alto/fondo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #000;
-}
-
-header {
-    background: var(--color-surface-header);
-    padding: var(--spacing-base);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-header nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header ul {
-    display: flex;
-    list-style: none;
-    gap: var(--spacing-base);
-}
-
-header a {
-    text-decoration: none;
-    color: var(--color-text-primary);
-    font-weight: bold;
-}
-
+/* Ajuste de contenedor principal para permitir el desplazamiento */
 main {
-    padding: var(--spacing-base);
-    min-height: 80vh;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Empuja el contenido hacia abajo */
+    padding-bottom: 2rem;
 }
 
+/* Reducción y posicionamiento de las tarjetas */
 section {
-    max-width: var(--max-width-section);
-    margin: 2rem auto;
-    padding: 2rem;
-    background: var(--color-surface-section);
+    max-width: 500px; /* Reducimos el ancho para que ocupen menos espacio */
+    margin: 0.5rem auto; /* Reducimos márgenes */
+    padding: 1rem; /* Padding más compacto */
+    background: rgba(255, 255, 255, 0.9); /* Ligeramente más transparente */
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    /* Asegura que el texto no sea masivo */
+    font-size: 0.9rem;
 }
 
+section h2 {
+    font-size: 1.2rem; /* Títulos más pequeños para no tapar la imagen */
+    margin-bottom: 0.5rem;
+}
+
+/* Ajuste del Footer para que no compita con el contenido */
 footer {
-    text-align: center;
-    padding: 2rem;
-    background: var(--color-surface-footer);
-    color: var(--color-text-inverse);
+    background: rgba(0, 0, 0, 0.6); /* Más transparente */
+    padding: 1rem;
+    font-size: 0.8rem;
 }
